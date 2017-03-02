@@ -28,7 +28,7 @@ public class CartAnimView{
 
 #### activity_main.xml
 
-```
+```xml
 <FrameLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
@@ -64,7 +64,7 @@ public class CartAnimView{
 
 cart_anim.xml
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
            android:layout_width="wrap_content"
@@ -76,7 +76,7 @@ cart_anim.xml
 
  MainActivity.java
 
- ```
+ ```java
  package name.zeno.cartanimotion.demo;
 
  import android.os.Bundle;
