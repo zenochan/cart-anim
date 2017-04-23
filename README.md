@@ -40,7 +40,7 @@ dependencies{
 - 使用过程中遇到 BUG 请给我提 issue
 - 如果有好的功能需要扩展请给我提 pull request, 大家一起维护一个项目比一个人维护一个版本容易的多
 - 如果觉得项目对你有帮助就请我喝瓶百岁山吧 ~
-![](./doc/tenpay_3yuan.jpeg =120x120)
+![](./doc/tenpay_3yuan.jpeg)
 
 ## CHANGE LOG
 
