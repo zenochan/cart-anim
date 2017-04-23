@@ -13,7 +13,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import kale.adapter.CommonRcvAdapter;
 import kale.adapter.item.AdapterItem;
@@ -24,10 +24,10 @@ import zeno.name.animcart.CartAnimView;
  */
 public class MainActivity extends AppCompatActivity
 {
-  @Bind(R.id.rcv_cart)       RecyclerView         rcvCart;
-  @Bind(R.id.anim_container) CartAnimView         cartAnimView;
-  @Bind(R.id.fab)            FloatingActionButton fab;
-  private                    Action1<View>        listener;
+  @BindView(R.id.rcv_cart)       RecyclerView         rcvCart;
+  @BindView(R.id.anim_container) CartAnimView         cartAnimView;
+  @BindView(R.id.fab)            FloatingActionButton fab;
+  private                        Action1<View>        listener;
 
 
   @Override public boolean onCreateOptionsMenu(Menu menu)

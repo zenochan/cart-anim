@@ -3,7 +3,7 @@ package name.zeno.cartanimotion.demo;
 import android.view.View;
 import android.widget.ImageView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import kale.adapter.item.AdapterItem;
@@ -15,7 +15,7 @@ import lombok.Setter;
  */
 public class CartItem implements AdapterItem
 {
-  @Bind(R.id.iv_cart) ImageView ivCart;
+  @BindView(R.id.iv_cart) ImageView ivCart;
 
   @Setter private Action1<View> onClickCartListener;
 

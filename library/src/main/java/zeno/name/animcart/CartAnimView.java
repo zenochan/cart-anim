@@ -24,6 +24,8 @@ import lombok.Setter;
  * <li>{@link #setAnimLayout(int)} 设置动画布局</li>
  * <li>{@link #setCartView(View)} 设置动画执行终点的购物车View</li>
  * <li>{@link #setInterval(int)} 设置动画执行的间隔时间（ms）</li>
+ * <li>{@link #setStartScale(float)} 设置起使位置缩放</li>
+ * <li>{@link #setEndScale(float)} 设置结算位置缩放</li>
  * </ul>
  *
  * @author 陈治谋 (513500085@qq.com)
@@ -36,6 +38,9 @@ public class CartAnimView extends FrameLayout
   private List<View> viewPool = new ArrayList<>();
 
   @Setter private int interval = 1000;    //执行动画的时间
+
+  @Setter private float startScale = 0.3f;
+  @Setter private float endScale   = 1.0f;
 
   @LayoutRes
   @Setter(onParam = @__({@LayoutRes}))
@@ -78,7 +83,7 @@ public class CartAnimView extends FrameLayout
 
     int[] l = new int[2];
     view.getLocationInWindow(l);
-    PointF startP = new PointF(l[0] - location.x, l[1] - location.y);
+    PointF        startP        = new PointF(l[0] - location.x, l[1] - location.y);
     ValueAnimator valueAnimator = ValueAnimator.ofObject(new BezierEvaluator(), startP, cartLocation);
     valueAnimator.addUpdateListener(animation -> {
       PointF pointF = (PointF) animation.getAnimatedValue();
@@ -105,8 +110,8 @@ public class CartAnimView extends FrameLayout
 
     AnimatorSet animatorSet = new AnimatorSet();
     animatorSet.playTogether(
-        ObjectAnimator.ofFloat(animView, "scaleX", 0.3f, 1f),
-        ObjectAnimator.ofFloat(animView, "scaleY", 0.3f, 1f),
+        ObjectAnimator.ofFloat(animView, "scaleX", startScale, endScale),
+        ObjectAnimator.ofFloat(animView, "scaleY", startScale, endScale),
         valueAnimator
     );
     animatorSet.setDuration(interval);
